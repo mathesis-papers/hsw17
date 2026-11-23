@@ -1,0 +1,66 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 118388,
+      "matches_public": true,
+      "path": "paper.pdf",
+      "public_sha256": "1cfb55e3c0db2b4105e0fcf67fe6214bbbaa0cee8131f6317f7fec2841d7b9c2",
+      "sha256": "1cfb55e3c0db2b4105e0fcf67fe6214bbbaa0cee8131f6317f7fec2841d7b9c2"
+    },
+    "source": {
+      "bytes": 21940,
+      "matches_public": true,
+      "path": "source.archive",
+      "public_sha256": "6c58efc85d339fe6951a94d471e7e28950e701bd4a5685c6a041e8c46f39ae1d",
+      "sha256": "6c58efc85d339fe6951a94d471e7e28950e701bd4a5685c6a041e8c46f39ae1d"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "Extending Patel's pointwise proof (2026, Solution 1), we give an alternative coefficient proof of Conjecture 17, equation (6.1), page 15, of Hemmer, Straub and Westrem's New identities in the character table of symmetric groups involving Riordan numbers (2026), recovering the two-binary-quadratic Hilbert series of Benanti et al. (2012, Example 3.3, p.160). Both weighted character sums vanish in odd degree and equal binomial(n/2+2,2) in even degree. Patel's three-variable Schur specialization first identifies the sums for each partition, retaining all multiplicities in Ev. The cycle-index generating function then reduces their weighted average to a constant term equal to (1-t^2)^(-3). We give explicit arbitrary-weight and common-divisor consequences, including the N=1 case of Amdeberhan's q-series conjecture, and rederive the Riordan tableau formula already implicit in Meilhan–Suzuki (2015). A companion adjoint-representation argument proves the N=2 instances of the source's two character identities and its q-series conjecture.",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": null,
+    "current_version": 2,
+    "doi": null,
+    "lean_source": {
+      "revision": "439c57ca26fd0c0d2de1f48bc492717bc6f7597c",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/439c57ca26fd0c0d2de1f48bc492717bc6f7597c/D5/S3/Combinatorics/Partitions/HemmerStraubWestremWeightedAverage.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "bytes": 118388,
+      "sha256": "1cfb55e3c0db2b4105e0fcf67fe6214bbbaa0cee8131f6317f7fec2841d7b9c2",
+      "url": "/api/v1/collected-papers/hsw17/files/pdf?version=2"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-23T17:22:13.974370538Z",
+    "record": "hsw17",
+    "repository_name": "hsw17",
+    "source": {
+      "bytes": 21940,
+      "sha256": "6c58efc85d339fe6951a94d471e7e28950e701bd4a5685c6a041e8c46f39ae1d",
+      "url": "/api/v1/collected-papers/hsw17/files/source?version=2"
+    },
+    "title": "Weighted and rank-two extensions of Patel's proof: Hemmer–Straub–Westrem's Ev character-average conjecture",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-23T17:22:13.974370538Z",
+        "revision": "2",
+        "version": 2
+      }
+    ],
+    "work": "hsw17"
+  }
+}

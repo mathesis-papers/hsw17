@@ -1,0 +1,635 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\Ev}{\operatorname{Ev}}
+\newcommand{\CT}{\operatorname{CT}}
+\newcommand{\R}{\mathcal R}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\title{Weighted and rank-two extensions of Patel's proof: Hemmer--Straub--Westrem's $\Ev$ character-average conjecture}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore\\\small ChronoAI Pte Ltd, Singapore}
+\date{16 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Extending Patel's pointwise proof (2026, Solution 1), we give an alternative
+coefficient proof of Conjecture 17, equation (6.1), page 15, of Hemmer,
+Straub and Westrem's
+\emph{New identities in the character table of symmetric groups involving
+Riordan numbers} (2026), recovering the two-binary-quadratic Hilbert series
+of Benanti et al. (2012, Example 3.3, p.~160).
+Both weighted character sums vanish in odd degree and equal
+$\binom{n/2+2}{2}$ in even degree.
+Patel's three-variable Schur specialization first identifies the sums for
+each partition, retaining all multiplicities in $\Ev$.
+The cycle-index generating function then reduces their weighted average
+to a constant term equal to $(1-t^2)^{-3}$.
+We give explicit arbitrary-weight and common-divisor consequences, including
+the $N=1$ case of Amdeberhan's $q$-series conjecture, and rederive the
+Riordan tableau formula already implicit in Meilhan--Suzuki (2015).
+A companion adjoint-representation argument proves the $N=2$ instances
+of the source's two character identities and its $q$-series conjecture.
+\end{abstract}
+
+\section{The weighted identity}
+Hemmer, Straub and Westrem~\cite{HSW} ask for an explicit evaluation of
+two centralizer-weighted sums of symmetric-group characters.
+Their Conjecture 17 is Conjecture 6.1 on page 12 of the arXiv version;
+equation (6.1) has the same numbering in both versions.
+We evaluate the common sum by first reducing each summand to adjacent
+coefficients of a Laurent polynomial. This reduction also gives their
+pointwise Conjecture 6, equation (2.4) (arXiv Conjecture 2.3).
+
+For $\lambda=(a_1,\ldots,a_r)\vdash n$, let $m_k$ be the multiplicity
+of $k$ and set $z_\lambda=\prod_{k\geq1} k^{m_k}m_k!$.
+The multiset $\Ev(\lambda)$ is obtained by independently replacing each
+occurrence of $a_i$ with either $(2a_i)$ or $(a_i,a_i)$, and sorting.
+All $2^r$ choices are counted, even when they give identical partitions.
+Write $\chi^\mu_\tau$ for the irreducible character of $S_{2n}$ indexed
+by $\mu$, evaluated at cycle type $\tau$.
+Let $\R_3(2n)$ consist of partitions of $2n$ with at most three parts,
+all even; zero padding to a triple is understood.
+Define
+\begin{align*}
+ L_\lambda&=\sum_{\tau\in\Ev(\lambda)}(-1)^{\ell(\tau)}
+                         \sum_{\mu\in\R_3(2n)}\chi^\mu_\tau,&
+ B_\lambda&=\sum_{\tau\in\Ev(\lambda)}\chi^{(n,n)}_\tau,\\
+ L_n&=\sum_{\lambda\vdash n}\frac{L_\lambda}{z_\lambda},&
+ B_n&=\sum_{\lambda\vdash n}\frac{B_\lambda}{z_\lambda}.
+\end{align*}
+
+\begin{theorem}\label{thm:weighted}
+For every integer $n\geq1$,
+\[
+ L_n=B_n=
+ \begin{cases}\displaystyle\binom{n/2+2}{2},&n\text{ even},\\
+ 0,&n\text{ odd}.
+ \end{cases}
+\]
+With the empty-partition convention $L_0=B_0=1$, the generating function is
+\begin{equation}\label{eq:answer}
+ \sum_{n\geq0}L_nt^n=\sum_{n\geq0}B_nt^n=(1-t^2)^{-3}.
+\end{equation}
+\end{theorem}
+
+Patel's public solution~\cite[Solution 1, Sections 1--3]{P} proves the full
+pointwise identity, including the Schur detector and the same constant-term
+formula used here. We retain its complete coefficient argument and develop
+the weighted consequences. The cycle-index extraction is also the Hilbert
+series of two binary quadratics, evaluated by Benanti et al.
+\cite[Example 3.3, p.~160]{BDG}; the precise identification is given below.
+Thus the weighted evaluation is an application of known invariant theory,
+not a first evaluation of that Hilbert series.
+
+The posing paper proves the pointwise identity for partitions with a
+single part size, obtaining Riordan numbers or central trinomial
+coefficients~\cite[Sections 4--5]{HSW}; we rederive these specializations below.
+Westrem's signed power-sum factorization~\cite[Theorem 2.1]{W}
+is a starting ingredient. A representation-theoretic antecedent of the
+same-parity detector is Meilhan and Suzuki's decomposition of invariant
+tensor powers~\cite[Lemma 3.7]{MS}. The later character-degree
+refinements of Hemmer, Straub and Westrem~\cite[Theorem 1.3]{K}
+concern a different specialization, rather than these weighted cycle-type sums.
+The related Riordan tableau enumeration follows from that decomposition
+and is also contained in Okada~\cite[Corollary 5.5(3)]{O}, with a later bijective proof by
+Jagenteufel~\cite{J}. Amaral, Gil and Weiner~\cite[Theorem 4.1]{AGW}
+subsequently answered the source's full Motzkin-level bijection question.
+
+\section{The pointwise reduction}
+Brackets denote coefficient extraction, and $\CT_u=[u^0]$ denotes the
+constant coefficient of a Laurent polynomial in $u$.
+Put $p_a=x^a+y^a+z^a$ and $\Delta=(x-y)(x-z)(y-z)$.
+Let $\mathcal S_3(m)$ be the weakly decreasing triples of nonnegative
+integers summing to $m$ whose entries have the same parity.
+Thus $\mathcal S_3(2n)=\R_3(2n)$, while $\mathcal S_3(m)$ has all entries
+odd when $m$ is odd. For a symmetric homogeneous polynomial $F$ of degree
+$m\geq0$, define
+\[
+ E_m(F)=\sum_{\mu\in\mathcal S_3(m)}
+ [x^{\mu_1+2}y^{\mu_2+1}z^{\mu_3}]\,\Delta F.
+\]
+
+\begin{lemma}[Patel's Schur detector]\label{lem:detector}
+For every symmetric homogeneous $F\in\mathbb Q[x,y,z]$ of degree $m\geq0$,
+\begin{equation}\label{eq:detector}
+ E_m(F)=([u^m]-[u^{m+1}])F(u^2,u,1).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Expand $F$ in the Schur basis $s_{(a,b,c)}$, where
+$a\geq b\geq c\geq0$ and $a+b+c=m$.
+The alternant formula
+$\Delta s_{(a,b,c)}=\det(x_i^{\mu_j+3-j})_{1\leq i,j\leq3}$,
+with $(x_1,x_2,x_3)=(x,y,z)$ and $\mu=(a,b,c)$,
+shows that $E_m(s_{(a,b,c)})$ is $1$ if all three parts have the same parity and $0$
+otherwise: the exponent triple $(a+2,b+1,c)$ is strictly decreasing,
+and no other permutation of it is a decreasing triple.
+
+Set $d=a-b$ and $e=b-c$.
+Evaluating the same alternant at $(u^2,u,1)$ gives
+\[
+ H(u):=s_{(a,b,c)}(u^2,u,1)
+ =u^{b+2c}
+ \frac{(1-u^{d+1})(1-u^{e+1})(1-u^{d+e+2})}
+ {(1-u)^2(1-u^2)}.
+\]
+This equality may be read in $\mathbb Q[[u]]$, since its denominator
+has constant coefficient $1$.
+Symmetry and homogeneity imply $H(u)=u^{2m}H(u^{-1})$, so
+$[u^{m+1}]H=[u^{m-1}]H$.
+Since $m-(b+2c)=d+e$, the right side of~\eqref{eq:detector} on this basis element is
+\[
+ [u^{d+e}]\frac{(1-u^{d+1})(1-u^{e+1})(1-u^{d+e+2})}
+ {(1-u)(1-u^2)}.
+\]
+Let $K(j)=\lfloor j/2\rfloor+1$ for $j\geq0$, and $K(j)=0$ for $j<0$.
+The last numerator factor and the product $u^{d+1}u^{e+1}$ have degree
+greater than $d+e$; the displayed coefficient therefore equals
+\[
+ K(d+e)-K(e-1)-K(d-1)
+ =\begin{cases}1,&d,e\text{ both even},\\0,&\text{otherwise}.\end{cases}
+\]
+Indeed, substituting $d=2i+\epsilon$, $e=2j+\eta$ reduces this to the
+four choices $\epsilon,\eta\in\{0,1\}$.
+Both gaps are even exactly when $a,b,c$ have the same parity.
+Thus the two functionals agree on every Schur basis element.
+\end{proof}
+
+\begin{lemma}[Patel's pointwise identity]\label{lem:pointwise}
+For every $\lambda=(a_1,\ldots,a_r)\vdash n$ with $n\geq1$, put
+$Q_\lambda(u)=\prod_{i=1}^r(u^{-a_i}+1+u^{a_i})$. Then
+\begin{equation}\label{eq:pointwise}
+ L_\lambda=B_\lambda=2^r\CT_u\bigl((1-u^{-1})Q_\lambda(u)\bigr).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Define $F_- =\prod_i(p_{a_i}^2-p_{2a_i})$ and
+$F_+ =\prod_i(p_{a_i}^2+p_{2a_i})$.
+Expanding the choices defining $\Ev$ gives
+$F_-=\sum_{\tau\in\Ev(\lambda)}(-1)^{\ell(\tau)}p_\tau$ and
+$F_+=\sum_{\tau\in\Ev(\lambda)}p_\tau$.
+The first is Westrem's factorization~\cite{W} in three variables;
+the expansion also makes the multiplicities explicit.
+The Frobenius character formula~\cite[Lemma 7 and equation (5.2)]{HSW}
+identifies
+\[
+ \chi^\mu_\tau=[x^{\mu_1+2}y^{\mu_2+1}z^{\mu_3}]\,\Delta p_\tau
+ \qquad(\ell(\mu)\leq3).
+\]
+Consequently $L_\lambda=E_{2n}(F_-)$ and
+$B_\lambda=[x^{n+2}y^{n+1}z^0]\Delta F_+$.
+Let $P_\lambda(u)=\prod_i(1+u^{a_i}+u^{2a_i})=u^nQ_\lambda(u)$.
+Direct expansion of a single factor yields
+\[
+ F_-(u^2,u,1)=2^ru^nP_\lambda(u),\qquad
+ F_+(u,1,0)=2^rP_\lambda(u).
+\]
+Lemma~\ref{lem:detector} now gives
+$L_\lambda=2^r([u^n]-[u^{n+1}])P_\lambda$.
+For $B_\lambda$, only the $z$-free part $x^2y-xy^2$ of $\Delta$
+contributes. Since $n\geq1$, homogeneity gives
+\begin{align*}
+ B_\lambda
+ &=([x^ny^n]-[x^{n+1}y^{n-1}])F_+(x,y,0)\\
+ &=2^r([u^n]-[u^{n+1}])P_\lambda(u).
+\end{align*}
+Finally $P_\lambda=u^nQ_\lambda$, so the adjacent-coefficient difference
+is $[u^0]Q_\lambda-[u^1]Q_\lambda$
+$=\CT_u((1-u^{-1})Q_\lambda)$, as required.
+\end{proof}
+
+For example, $\lambda=(2,1)$ gives
+$P_\lambda=1+u+2u^2+u^3+2u^4+u^5+u^6$ and
+$L_\lambda=B_\lambda=4(1-2)=-4$.
+Thus the nonnegative weighted averages in Theorem~\ref{thm:weighted} do not
+reflect positivity of every individual summand.
+
+\section{Short consequences and earlier special cases}
+Let $R_m$ count Riordan paths of length $m$: paths from $(0,0)$ to
+$(m,0)$ with steps $(1,1),(1,0),(1,-1)$, never below the horizontal
+axis, with no horizontal step on that axis. Let
+$T_r=[u^0](u^{-1}+1+u)^r$ be the central trinomial coefficient.
+For a partition $\mu$, let $f^\mu$ be the number of standard Young tableaux
+of shape $\mu$, equivalently the degree of $\chi^\mu$.
+The adjacent-trinomial description of $R_m$ below is Callan's formula
+\cite{C}, recorded earlier in his OEIS comment dated 7 February 2004~\cite{OEIS}.
+
+\begin{corollary}[Riordan tableaux and equal parts]\label{cor:riordan}
+For $m\geq0$ and positive integers $k,r$,
+\[
+ \sum_{\mu\in\mathcal S_3(m)} f^\mu=R_m,\qquad
+ L_{(k^r)}=B_{(k^r)}=
+ \begin{cases}2^rR_r,&k=1,\\2^rT_r,&k>1.\end{cases}
+\]
+The first formula follows already from Meilhan--Suzuki
+\cite[Lemma 3.7]{MS} and Okada~\cite[Corollary 5.5(3)]{O}.
+For the second, the rectangular $k=1$ case is recorded in Wallach's OEIS
+comment dated 20 August 2014~\cite{OEIS}; both $\Ev$ sums and the $k>1$
+case are proved in~\cite[Sections 4--5]{HSW}.
+\end{corollary}
+\begin{proof}
+Apply Lemma~\ref{lem:detector} to $F=(x+y+z)^m$ and use the
+Frobenius formula at the identity class. This gives
+$\sum_{\mu\in\mathcal S_3(m)}f^\mu
+=\CT_u(1-u^{-1})(u^{-1}+1+u)^m$.
+To identify the latter with $R_m$, write
+$D(s)=\sqrt{1-2s-3s^2}$, with constant term $1$.
+Expanding in $s$ gives
+\[
+ A(s):=\CT_u\frac1{1-s(1+u+u^{-1})}=
+ \frac1{1-s}\sum_{j\geq0}\binom{2j}{j}
+       \left(\frac{s}{1-s}\right)^{2j}=D(s)^{-1}.
+\]
+Multiplying the denominator through and using symmetry in $u,u^{-1}$
+shows that the adjacent constant term is
+$((1-s)A(s)-1)/(2s)$. Their difference is therefore
+\[
+ \CT_u\frac{1-u^{-1}}{1-s(1+u+u^{-1})}
+ =\frac{1+(3s-1)/D(s)}{2s}
+ =\frac{1+s-D(s)}{2s(1+s)}.
+\]
+For completeness, arbitrary Motzkin excursions have series
+$M=1+sM+s^2M^2$, so $s^2M=(1-s-D(s))/2$.
+First-return decomposition of a nonempty Riordan path gives
+$R=1+s^2MR$, hence
+$R=2/(1+s+D(s))=(1+s-D(s))/(2s(1+s))$.
+All displayed quotients have their indicated formal-series expansion at
+$s=0$. Finally, apply~\eqref{eq:pointwise} to $(k^r)$.
+For $k=1$ the adjacent-coefficient difference is $R_r$; for $k>1$
+every exponent is divisible by $k$, so the coefficient of $u$ is zero
+and the constant coefficient is $T_r$.
+\end{proof}
+
+\begin{corollary}[Common divisors]\label{cor:gcd}
+If $\gcd(a_1,\ldots,a_r)>1$, then
+\[
+ L_\lambda=B_\lambda
+ =2^r\#\{(\epsilon_1,\ldots,\epsilon_r)\in\{-1,0,1\}^r:
+                   \textstyle\sum_i\epsilon_i a_i=0\}\geq0.
+\]
+This extends the central-trinomial case to mixed part sizes.
+\end{corollary}
+\begin{proof}
+Every exponent of $Q_\lambda$ is divisible by the common divisor,
+so $[u^1]Q_\lambda=0$. Its constant coefficient counts the displayed
+choices. Apply Lemma~\ref{lem:pointwise}.
+\end{proof}
+
+\begin{corollary}[Vanishing above the first-row bound]\label{cor:row}
+For $\lambda\vdash n$ and $\mu\vdash2n$ with $\mu_1>n$,
+\[
+ \sum_{\tau\in\Ev(\lambda)}(-1)^{\ell(\tau)}\chi^\mu_\tau=0.
+\]
+This is the row-wise vanishing consequence of Westrem's
+factorization~\cite[Corollary 3.4]{W}.
+\end{corollary}
+\begin{proof}
+In $d\geq\ell(\mu)$ variables the signed power-sum sum is
+$F_-=\prod_i2\sum_{j<k}x_j^{a_i}x_k^{a_i}$.
+Each variable has degree at most $n$. Multiplying by the Vandermonde
+adds at most $d-1$ to any variable's degree, whereas the Frobenius
+coefficient for $\mu$ requires exponent $\mu_1+d-1>n+d-1$
+on the first variable. That coefficient is zero.
+\end{proof}
+
+\section{Cycle-index averaging}
+\begin{proof}[Proof of Theorem~\ref{thm:weighted}]
+Work in $\mathbb Q[u,u^{-1}][[t]]$.
+All constant terms below are taken coefficientwise in $t$.
+For $a_k(u)=2(u^k+1+u^{-k})$, define
+\[
+ C(t,u)=\sum_{n\geq0}t^n\sum_{\lambda\vdash n}
+                  \frac{\prod_i a_{\lambda_i}(u)}{z_\lambda}.
+\]
+Writing a partition in terms of its multiplicities gives the formal identity
+\begin{align}
+ C(t,u)
+ &=\prod_{k\geq1}\sum_{j\geq0}
+       \frac{(a_k(u)t^k)^j}{k^j j!}
+ =\exp\!\left(\sum_{k\geq1}\frac{a_k(u)t^k}{k}\right)\notag\\
+ &=\frac{1}{(1-t)^2(1-tu)^2(1-t/u)^2}.\label{eq:cycle}
+\end{align}
+Every coefficient of $t^n$ involves only $k\leq n$ and finitely many
+multiplicities, so the products, sums and constant-term operations are
+well-defined. The last equality follows from
+$\exp(2\sum_{k\geq1}v^k/k)=(1-v)^{-2}$ in formal power series.
+Lemma~\ref{lem:pointwise}, with the empty partition handled separately,
+therefore gives
+\[
+ \sum_{n\geq0}L_nt^n=\sum_{n\geq0}B_nt^n
+ =\frac{1}{(1-t)^2}\CT_u
+       \frac{1-u^{-1}}{(1-tu)^2(1-t/u)^2}.
+\]
+Expand the last two factors using
+$(1-v)^{-2}=\sum_{j\geq0}(j+1)v^j$.
+The unshifted constant term requires equal exponents; the shifted term
+requires the exponent from $(1-tu)^{-2}$ to be one larger. Hence
+\begin{align*}
+ \CT_u\frac{1-u^{-1}}{(1-tu)^2(1-t/u)^2}
+ &=\sum_{j\geq0}(j+1)^2t^{2j}
+       -\sum_{j\geq0}(j+1)(j+2)t^{2j+1}\\
+ &=\frac{1+t^2}{(1-t^2)^3}-\frac{2t}{(1-t^2)^3}
+ =\frac{(1-t)^2}{(1-t^2)^3}.
+\end{align*}
+The two rational-series formulas follow by differentiating
+$\sum_{j\geq0}v^j=(1-v)^{-1}$.
+Cancelling $(1-t)^2$ proves~\eqref{eq:answer}.
+Finally $(1-t^2)^{-3}=\sum_{j\geq0}\binom{j+2}{2}t^{2j}$,
+which gives both the even value and the vanishing of odd coefficients.
+\end{proof}
+
+\subsection*{The published invariant Hilbert series}
+Let $V=\operatorname{Sym}^2\mathbb C^2$ be the binary-quadratic
+representation of $SL_2(\mathbb C)$, with torus weights $u,1,u^{-1}$
+(writing $u$ for the square of the usual torus parameter).
+The graded character of the symmetric algebra on $V\oplus V$ is
+\[
+ \sum_{n\geq0}\operatorname{ch}\operatorname{Sym}^n(V\oplus V)t^n
+ =C(t,u).
+\]
+Every irreducible constituent factors through $SO_3$ and has character
+$u^{-j}+\cdots+u^j$ for some integer $j\geq0$.
+The functional $\CT_u(1-u^{-1})$ takes value $1$ for $j=0$ and $0$
+otherwise, hence extracts the dimension of the invariant subspace.
+Consequently
+\[
+ \sum_{n\geq0}B_nt^n
+ =H\!\left(\mathbb C[V\oplus V]^{SL_2};t\right)
+ =(1-t^2)^{-3}.
+\]
+Here $H(A;t)=\sum_n\dim(A_n)t^n$ denotes the Hilbert series; coordinate
+functions have the same character since $V$ is self-dual.
+The last series is exactly Benanti et al.'s evaluation
+\cite[Example 3.3, p.~160]{BDG}, with their $W(2)=V$.
+The elementary calculation above supplies an alternative coefficient proof
+and its explicit interpretation as the weighted $\Ev$ character sums.
+
+\section{Arbitrary weights and the source's \texorpdfstring{$q$}{q}-series}
+\begin{corollary}\label{cor:q}
+With $g_\lambda(q)=\prod_i q^{a_i}/(1+q^{a_i})$,
+\begin{equation}\label{eq:q}
+ \sum_{n\geq0}\sum_{\lambda\vdash n}
+       \frac{g_\lambda(q)}{z_\lambda}L_\lambda
+ =\sum_{n\geq0}\sum_{\lambda\vdash n}
+       \frac{g_\lambda(q)}{z_\lambda}B_\lambda.
+\end{equation}
+Here $L_\varnothing=B_\varnothing=1$.
+This is the $N=1$ case of Amdeberhan's Conjecture 18,
+equation (6.2), page 16 of~\cite{HSW} (arXiv Conjecture 6.2).
+\end{corollary}
+\begin{proof}
+For $n\geq1$, multiply~\eqref{eq:pointwise} by
+$g_\lambda(q)/z_\lambda$ and sum.
+Since $g_\lambda(q)$ has order at least $|\lambda|$, each coefficient
+of $q$ receives contributions from only finitely many partitions.
+The empty-partition terms are $1$ on both sides.
+\end{proof}
+
+\begin{corollary}[Arbitrary multiplicative weights]\label{cor:weights}
+Let $w_k$ be elements of a commutative $\mathbb Q$-algebra, with $t$ a
+formal variable. The two series
+$\sum_{n\geq0}t^n\sum_{\lambda\vdash n}z_\lambda^{-1}
+ (\prod_iw_{a_i})L_\lambda$ and the corresponding series with $B_\lambda$
+are equal, and their common value is
+\[
+ \CT_u(1-u^{-1})\exp\!\left(
+ 2\sum_{k\geq1}\frac{w_k t^k(u^k+1+u^{-k})}{k}\right).
+\]
+\end{corollary}
+\begin{proof}
+Multiply~\eqref{eq:pointwise} by the indicated weights and sum by the
+multiplicities of each part, exactly as in~\eqref{eq:cycle}.
+Each coefficient of $t$ involves finitely many partitions and Laurent
+monomials, so both operations are defined coefficientwise.
+\end{proof}
+
+For the specific $q$-weights, multiplicity summation also gives the common
+series in~\eqref{eq:q} as
+\[
+ \CT_u(1-u^{-1})\exp\!\left(
+ 2\sum_{k\geq1}\frac{q^k(u^k+1+u^{-k})}{k(1+q^k)}\right).
+\]
+Its coefficients through degree $10$ are
+\[
+ 1+3q^2-4q^3+9q^4-12q^5+22q^6-36q^7+60q^8-88q^9+135q^{10},
+\]
+agreeing with the finite expansion in~\cite[p.~16]{HSW}.
+
+The enumeration in Corollary~\ref{cor:riordan} follows by taking dimensions
+in Meilhan--Suzuki's invariant-tensor decomposition~\cite[Lemma 3.7]{MS}
+(2015). It also follows from Okada~\cite[Corollary 5.5(3)]{O} (2016):
+specialize the rank to $1$ and the
+terminal column size to $0$. His partition sequences become Riordan
+paths, and the permitted shapes have zero or three odd rows.
+Jagenteufel~\cite[Section 3.2.1 and Lemma 36]{J} later supplied an explicit
+Riordan-path/tableau bijection. Hemmer, Straub and Westrem subsequently
+gave an independent enumerative proof~\cite[Theorem 11]{HSW}.
+The stronger question on page 16 of~\cite{HSW}, repeated in~\cite{K},
+asks for a full Motzkin-path/tableau bijection restricting to these Riordan
+objects. Amaral, Gil and Weiner~\cite[Theorems 2.1, 3.7 and 4.1]{AGW}
+answer it affirmatively, using restricted permutations and a tableau
+parity correction. These are prior results, not constructions of this note.
+
+Questions 4 and 5 are classification questions, not universal assertions.
+Their unrestricted equalities already fail in the posing source: equation
+(2.1) has values $1040$ and $1041$ for $n=12,N=3$; Appendix A gives a
+pointwise discrepancy of $8$ for $\lambda=(5,2,1),N=3$.
+Our answers for $N=1,2$ do not change those counterexamples.
+
+\subsection*{The rank-two companion}
+Write $\mathcal R_d(2n)$ for the even-row partitions of $2n$ with at most
+$d$ rows, and $\mathcal R_d^c(2n)$ for the partitions with at most $d$
+rows and all columns even.
+For a virtual character $f$ of a reductive group $G$, write
+$\langle f\rangle_G$ for its trivial multiplicity, extended linearly
+from actual representations.
+
+\begin{corollary}\label{cor:ranktwo}
+For every $\lambda\vdash n$, $n\geq1$,
+\[
+ \sum_{\tau\in\Ev(\lambda)}(-1)^{\ell(\tau)}
+        \sum_{\mu\in\mathcal R_5(2n)}\chi^\mu_\tau
+ =\sum_{\tau\in\Ev(\lambda)}
+        \sum_{\mu\in\mathcal R_4^c(2n)}\chi^\mu_\tau.
+\]
+Thus Questions 4 and 5 have affirmative answers also for $N=2$, and
+Conjecture 18 holds for $N=2$ as an equality of formal $q$-series.
+\end{corollary}
+\begin{proof}
+Let $X=\mathbb C^5$ have a nondegenerate symmetric form and
+$W=\mathbb C^4$ a nondegenerate alternating form.
+The orthogonal and symplectic invariant criteria
+\cite[Corollaries 3.3 and 2.3]{DH} give
+$\langle s_\mu(X)\rangle_{O_5}=1$ exactly for even rows, and
+$\langle s_\mu(W)\rangle_{Sp_4}=1$ exactly for even columns.
+Both multiplicities are zero otherwise, including the dimension bounds.
+Apply these criteria to the Frobenius expansions of $F_-$ in five
+variables and $F_+$ in four variables.
+For any representation $U$, define its Adams character by
+$\psi^a(U)(g)=\operatorname{tr}(g^a|U)$; these are virtual characters.
+The power-sum identities
+\[
+ p_a(X)^2-p_{2a}(X)=2\psi^a(\Lambda^2X),\qquad
+ p_a(W)^2+p_{2a}(W)=2\psi^a(\operatorname{Sym}^2W)
+\]
+show that the two sums are respectively
+$2^r\langle\prod_i\psi^{a_i}(\Lambda^2X)\rangle_{O_5}$ and
+$2^r\langle\prod_i\psi^{a_i}(\operatorname{Sym}^2W)\rangle_{Sp_4}$.
+The action of $O_5$ on $\Lambda^2X$ has the same image as that of
+$SO_5$: if $\det g=-1$, then $-g\in SO_5$ and
+$\Lambda^2g=\Lambda^2(-g)$.
+
+Here is the exceptional identification needed to compare these characters.
+Let $b\in\Lambda^2W$ be the inverse symplectic bivector. The wedge pairing
+on $\Lambda^2W$ is symmetric and nondegenerate, and $b\wedge b\ne0$.
+Its orthogonal complement $V=b^\perp$ is therefore five-dimensional
+and nondegenerate. The action induces $\rho:Sp_4\to SO(V)$.
+Identify $X$ with $V$ by an isometry.
+If an infinitesimal symplectic endomorphism acts trivially on $V$, it
+also fixes $b$, and hence acts trivially on $\Lambda^2W$.
+The latter forces it to be zero: in a basis, all off-diagonal entries
+vanish and its diagonal entries satisfy $d_i+d_j=0$ for every $i\ne j$.
+Thus $d\rho$ is injective; both Lie algebras have dimension $10$,
+so it is an isomorphism and $\rho$ is onto the connected group $SO(V)$.
+The natural equivariant identifications
+$\Lambda^2V\simeq\mathfrak{so}(V)$ and
+$\operatorname{Sym}^2W\simeq\mathfrak{sp}(W)$, together with $d\rho$,
+identify the two adjoint representations after pullback.
+Their Adams characters and products agree, and surjectivity preserves
+trivial multiplicities. This proves the displayed identity.
+Multiplication by $1/z_\lambda$ and summation proves Question 4;
+multiplication by $g_\lambda(q)/z_\lambda$ proves Conjecture 18,
+with coefficientwise finiteness as in Corollary~\ref{cor:q}.
+\end{proof}
+
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.39\linewidth}>{\raggedright\arraybackslash}p{0.54\linewidth}@{}}
+\toprule
+Source item in~\cite{HSW} & Coverage\\
+\midrule
+Conjecture 17, (6.1), p.~15 & Alternative proof; prior equivalent Hilbert series Benanti et al. (2012); Theorem~\ref{thm:weighted}.\\
+Conjecture 6, (2.4), p.~4 & Reproved; prior proof Patel (2026); Lemma~\ref{lem:pointwise} includes all mixed part sizes.\\
+Question 4, (2.1), pp.~3--4 & Answered: yes for $N=1,2$; universally no, by the source's $N=3$ counterexample.\\
+Question 5, (2.3), p.~4 & Answered: yes for $N=1,2$; universally no, by the source's Appendix A.\\
+Riordan tableau formula, Theorem 11 & Reproved; prior proof Meilhan--Suzuki (2015); also Okada (2016), Jagenteufel (2018), Hemmer--Straub--Westrem (2025).\\
+Single-part-size cases, Sections 4--5 & Reproved; prior rectangular $k=1$ formula Wallach (2014); both sides Hemmer--Straub--Westrem (2025).\\
+Conjecture 18, (6.2), p.~16 & Proved for $N=1,2$ by Corollaries~\ref{cor:q} and~\ref{cor:ranktwo}; no assertion for $N\geq3$.\\
+Full Motzkin--Riordan bijection question, p.~16 & Answered: yes; prior proof Amaral--Gil--Weiner (2026), Theorem 4.1.\\
+Westrem, Corollary 3.4 & Reproved; prior proof Westrem (2024); Corollary~\ref{cor:row}.\\
+Mixed common-divisor case; arbitrary weights & Not posed; proved in Corollaries~\ref{cor:gcd} and~\ref{cor:weights}.\\
+Other $N\geq3$ classifications and degree refinements of~\cite{K} & Not covered by the present argument.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Mathematical verification scope}
+At the pinned sources,
+\href{https://github.com/the-omega-institute/trureturing/blob/439c57ca26fd0c0d2de1f48bc492717bc6f7597c/D5/S3/Combinatorics/Partitions/HemmerStraubWestremWeightedAverage.lean}{\texttt{HemmerStraubWestremWeightedAverage.lean}}
+contains the declaration \texttt{result} proving both weighted equalities
+for every $n\geq1$ in its rational Frobenius-coefficient model.
+The declaration \texttt{result} in
+\href{https://github.com/the-omega-institute/trureturing/blob/439c57ca26fd0c0d2de1f48bc492717bc6f7597c/D5/S3/Combinatorics/Partitions/HemmerStraubWestrem.lean}{\texttt{HemmerStraubWestrem.lean}}
+proves the pointwise identity for every positive-size partition.
+In these files, \texttt{frobChar} is the coefficient of
+$\Delta p_\tau$ used above. The interpretation as ordinary irreducible
+characters is supplied by the classical Frobenius formula, rather than an
+internal construction of Specht modules.
+The all-degree Schur-basis argument of Lemma~\ref{lem:detector}, its
+same-parity extension to odd degree, and the corollaries on Riordan
+tableaux, common divisors, first-row vanishing, arbitrary weights and
+$q$-series are written proofs in this note. The cited path bijections
+have the scopes stated above.
+Corollary~\ref{cor:ranktwo}, including its $N=2$ weighted and $q$-series
+consequences, is a written representation-theoretic proof.
+
+The accompanying \texttt{verify.py} uses Murnaghan--Nakayama recursion to
+check both character sums and their Laurent formula for $0\leq n\leq8$.
+It also compares every Laurent coefficient in the cycle recurrence and
+the product~\eqref{eq:cycle} through degree $60$, and checks the displayed
+$q$-series through degree $10$. It checks the additional corollaries
+over the finite ranges specified in the accompanying README.
+All computations use exact integers and
+rational numbers; the all-degree conclusions are established by the proofs.
+
+\begin{thebibliography}{99}
+\bibitem{DH}
+V. Drensky and E. Hristova, \emph{Invariants of symplectic and orthogonal
+groups acting on $GL(n,\mathbb C)$-modules},
+\href{https://arxiv.org/abs/1707.05893v1}{arXiv:1707.05893v1}
+(18 July 2017), Corollaries 2.3 and 3.3.
+\bibitem{P}
+S. Patel, \emph{A proof of the character-sum identity for every partition},
+\href{https://mathdb.com/p/370115/the-n-1-conjecture-for-character-sums-over-riordan-partition}{MathDB problem 370115},
+Solution 1, Sections 1--3, public posting (2026), accessed 16 November 2026.
+\bibitem{BDG}
+F. Benanti, S. Boumova, V. Drensky, G. K. Genov and P. Koev,
+\emph{Computing with rational symmetric functions and applications to
+invariant theory and PI-algebras}, Serdica Mathematical Journal
+\textbf{38} (2012), 137--188, Example 3.3, p.~160.
+\href{https://arxiv.org/abs/1201.4448v1}{arXiv:1201.4448v1}
+(21 January 2012).
+\bibitem{MS}
+J.-B. Meilhan and S. Suzuki, \emph{Riordan trees and the homotopy
+$sl_2$ weight system}, \href{https://arxiv.org/abs/1507.04454v1}{arXiv:1507.04454v1}
+(16 July 2015), Section 3.3, Lemma 3.7; Journal of Pure and Applied Algebra
+\textbf{221}(3) (2017), 691--706,
+\href{https://doi.org/10.1016/j.jpaa.2016.07.012}{doi:10.1016/j.jpaa.2016.07.012}.
+\bibitem{C}
+D. Callan, \emph{Riordan numbers are differences of trinomial coefficients},
+\href{https://pages.stat.wisc.edu/~callan/notes/riordan/riordan.pdf}{author manuscript}
+(25 September 2006), 2 pp.
+\bibitem{OEIS}
+OEIS Foundation, \href{https://oeis.org/A005043}{A005043, Riordan numbers},
+comments attributed to D. Callan (7 February 2004) and N. Wallach
+(20 August 2014), accessed 16 November 2026.
+\bibitem{O}
+S. Okada, \emph{Pieri rules for classical groups and equinumeration between
+generalized oscillating tableaux and semi-standard tableaux},
+Electronic Journal of Combinatorics \textbf{23}(4) (2016), P4.43,
+\href{https://doi.org/10.37236/6214}{doi:10.37236/6214}.
+Preprint: \href{https://arxiv.org/abs/1606.02375v1}{arXiv:1606.02375v1},
+Corollary 5.5(3).
+\bibitem{AGW}
+R. J. Amaral, J. B. Gil and M. D. Weiner,
+\emph{Motzkin paths, 321-avoiding permutations, and standard Young tableaux
+with rows of equal parity},
+\href{https://arxiv.org/abs/2609.27096v1}{arXiv:2609.27096v1}
+(22 September 2026), Theorem 4.1;
+\href{https://arxiv.org/abs/2609.27096v2}{version 2} (28 September 2026).
+\bibitem{HSW}
+D.~J. Hemmer, A. Straub and K.~J. Westrem,
+\emph{New identities in the character table of symmetric groups involving
+Riordan numbers}, Electronic Journal of Combinatorics \textbf{33}(1)
+(2026), P1.57, 17 pp.,
+\href{https://doi.org/10.37236/14401}{doi:10.37236/14401}.
+Preprint: \href{https://arxiv.org/abs/2509.02796v1}{arXiv:2509.02796v1} (2025).
+\bibitem{W}
+K.~J. Westrem, \emph{A new symmetric function identity with an application
+to symmetric group character values},
+\href{https://arxiv.org/abs/2410.04644v1}{arXiv:2410.04644v1} (2024), Theorem 2.1.
+\bibitem{K}
+D.~J. Hemmer, A. Straub and K.~J. Westrem,
+\emph{Equal knapsack identities between symmetric group character degrees},
+\href{https://arxiv.org/abs/2510.00301v2}{arXiv:2510.00301v2} (2026).
+\bibitem{J}
+J. Jagenteufel, \emph{A Sundaram type bijection for $\mathrm{SO}(3)$:
+vacillating tableaux and pairs of standard Young tableaux and orthogonal
+Littlewood--Richardson tableaux}, Electronic Journal of Combinatorics
+\textbf{25}(3) (2018), P3.50,
+\href{https://doi.org/10.37236/7713}{doi:10.37236/7713}.
+Preprint: \href{https://arxiv.org/abs/1801.03780v2}{arXiv:1801.03780v2},
+Section 3.2.1 and Lemma 36.
+\end{thebibliography}
+
+\smallskip
+\small\copyright\ 2026 Haobo Ma and Wenlin Zhang.
+Licensed under \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International (CC BY 4.0)}.
+\end{document}

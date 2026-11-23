@@ -1,0 +1,373 @@
+{
+  "nodes": [
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s1",
+      "contributor": null,
+      "identity": "collected:hsw17:2:s1",
+      "kind": "paper",
+      "label": "Theorem",
+      "lean_source": {
+        "revision": "439c57ca26fd0c0d2de1f48bc492717bc6f7597c",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/439c57ca26fd0c0d2de1f48bc492717bc6f7597c/D5/S3/Combinatorics/Partitions/HemmerStraubWestremWeightedAverage.lean"
+      },
+      "lineage": "collected:hsw17:s1",
+      "macros": {
+        "\\CT": "\\operatorname{CT}",
+        "\\Ev": "\\operatorname{Ev}",
+        "\\R": "\\mathcal R"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hsw17",
+      "scope": "in_scope",
+      "statement": "For every integer $n\\geq1$,\n\\[\n L_n=B_n=\n \\begin{cases}\\displaystyle\\binom{n/2+2}{2},&n\\text{ even},\\\\\n 0,&n\\text{ odd}.\n \\end{cases}\n\\]\nWith the empty-partition convention $L_0=B_0=1$, the generating function is\n\\begin{equation}\n \\sum_{n\\geq0}L_nt^n=\\sum_{n\\geq0}B_nt^n=(1-t^2)^{-3}.\n\\end{equation}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Weighted and rank-two extensions of Patel's proof: Hemmer–Straub–Westrem's Ev character-average conjecture",
+      "toolchain": null,
+      "version": 2,
+      "work": "hsw17"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s2",
+      "contributor": null,
+      "identity": "collected:hsw17:2:s2",
+      "kind": "paper",
+      "label": "Lemma",
+      "lean_source": {
+        "revision": "439c57ca26fd0c0d2de1f48bc492717bc6f7597c",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/439c57ca26fd0c0d2de1f48bc492717bc6f7597c/D5/S3/Combinatorics/Partitions/HemmerStraubWestremWeightedAverage.lean"
+      },
+      "lineage": "collected:hsw17:s2",
+      "macros": {
+        "\\CT": "\\operatorname{CT}",
+        "\\Ev": "\\operatorname{Ev}",
+        "\\R": "\\mathcal R"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hsw17",
+      "scope": "in_scope",
+      "statement": "For every symmetric homogeneous $F\\in\\mathbb Q[x,y,z]$ of degree $m\\geq0$,\n\\begin{equation}\n E_m(F)=([u^m]-[u^{m+1}])F(u^2,u,1).\n\\end{equation}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Weighted and rank-two extensions of Patel's proof: Hemmer–Straub–Westrem's Ev character-average conjecture",
+      "toolchain": null,
+      "version": 2,
+      "work": "hsw17"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s3",
+      "contributor": null,
+      "identity": "collected:hsw17:2:s3",
+      "kind": "paper",
+      "label": "Lemma",
+      "lean_source": {
+        "revision": "439c57ca26fd0c0d2de1f48bc492717bc6f7597c",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/439c57ca26fd0c0d2de1f48bc492717bc6f7597c/D5/S3/Combinatorics/Partitions/HemmerStraubWestremWeightedAverage.lean"
+      },
+      "lineage": "collected:hsw17:s3",
+      "macros": {
+        "\\CT": "\\operatorname{CT}",
+        "\\Ev": "\\operatorname{Ev}",
+        "\\R": "\\mathcal R"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hsw17",
+      "scope": "in_scope",
+      "statement": "For every $\\lambda=(a_1,\\ldots,a_r)\\vdash n$ with $n\\geq1$, put\n$Q_\\lambda(u)=\\prod_{i=1}^r(u^{-a_i}+1+u^{a_i})$. Then\n\\begin{equation}\n L_\\lambda=B_\\lambda=2^r\\CT_u\\bigl((1-u^{-1})Q_\\lambda(u)\\bigr).\n\\end{equation}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Weighted and rank-two extensions of Patel's proof: Hemmer–Straub–Westrem's Ev character-average conjecture",
+      "toolchain": null,
+      "version": 2,
+      "work": "hsw17"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s4",
+      "contributor": null,
+      "identity": "collected:hsw17:2:s4",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "439c57ca26fd0c0d2de1f48bc492717bc6f7597c",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/439c57ca26fd0c0d2de1f48bc492717bc6f7597c/D5/S3/Combinatorics/Partitions/HemmerStraubWestremWeightedAverage.lean"
+      },
+      "lineage": "collected:hsw17:s4",
+      "macros": {
+        "\\CT": "\\operatorname{CT}",
+        "\\Ev": "\\operatorname{Ev}",
+        "\\R": "\\mathcal R"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hsw17",
+      "scope": "in_scope",
+      "statement": "For $m\\geq0$ and positive integers $k,r$,\n\\[\n \\sum_{\\mu\\in\\mathcal S_3(m)} f^\\mu=R_m,\\qquad\n L_{(k^r)}=B_{(k^r)}=\n \\begin{cases}2^rR_r,&k=1,\\\\2^rT_r,&k>1.\\end{cases}\n\\]\nThe first formula follows already from Meilhan--Suzuki\n\\cite[Lemma 3.7]{MS} and Okada~\\cite[Corollary 5.5(3)]{O}.\nFor the second, the rectangular $k=1$ case is recorded in Wallach's OEIS\ncomment dated 20 August 2014~\\cite{OEIS}; both $\\Ev$ sums and the $k>1$\ncase are proved in~\\cite[Sections 4--5]{HSW}.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Weighted and rank-two extensions of Patel's proof: Hemmer–Straub–Westrem's Ev character-average conjecture",
+      "toolchain": null,
+      "version": 2,
+      "work": "hsw17"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s5",
+      "contributor": null,
+      "identity": "collected:hsw17:2:s5",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "439c57ca26fd0c0d2de1f48bc492717bc6f7597c",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/439c57ca26fd0c0d2de1f48bc492717bc6f7597c/D5/S3/Combinatorics/Partitions/HemmerStraubWestremWeightedAverage.lean"
+      },
+      "lineage": "collected:hsw17:s5",
+      "macros": {
+        "\\CT": "\\operatorname{CT}",
+        "\\Ev": "\\operatorname{Ev}",
+        "\\R": "\\mathcal R"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hsw17",
+      "scope": "in_scope",
+      "statement": "If $\\gcd(a_1,\\ldots,a_r)>1$, then\n\\[\n L_\\lambda=B_\\lambda\n =2^r\\#\\{(\\epsilon_1,\\ldots,\\epsilon_r)\\in\\{-1,0,1\\}^r:\n                   \\textstyle\\sum_i\\epsilon_i a_i=0\\}\\geq0.\n\\]\nThis extends the central-trinomial case to mixed part sizes.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Weighted and rank-two extensions of Patel's proof: Hemmer–Straub–Westrem's Ev character-average conjecture",
+      "toolchain": null,
+      "version": 2,
+      "work": "hsw17"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s6",
+      "contributor": null,
+      "identity": "collected:hsw17:2:s6",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "439c57ca26fd0c0d2de1f48bc492717bc6f7597c",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/439c57ca26fd0c0d2de1f48bc492717bc6f7597c/D5/S3/Combinatorics/Partitions/HemmerStraubWestremWeightedAverage.lean"
+      },
+      "lineage": "collected:hsw17:s6",
+      "macros": {
+        "\\CT": "\\operatorname{CT}",
+        "\\Ev": "\\operatorname{Ev}",
+        "\\R": "\\mathcal R"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hsw17",
+      "scope": "in_scope",
+      "statement": "For $\\lambda\\vdash n$ and $\\mu\\vdash2n$ with $\\mu_1>n$,\n\\[\n \\sum_{\\tau\\in\\Ev(\\lambda)}(-1)^{\\ell(\\tau)}\\chi^\\mu_\\tau=0.\n\\]\nThis is the row-wise vanishing consequence of Westrem's\nfactorization~\\cite[Corollary 3.4]{W}.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Weighted and rank-two extensions of Patel's proof: Hemmer–Straub–Westrem's Ev character-average conjecture",
+      "toolchain": null,
+      "version": 2,
+      "work": "hsw17"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s7",
+      "contributor": null,
+      "identity": "collected:hsw17:2:s7",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "439c57ca26fd0c0d2de1f48bc492717bc6f7597c",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/439c57ca26fd0c0d2de1f48bc492717bc6f7597c/D5/S3/Combinatorics/Partitions/HemmerStraubWestremWeightedAverage.lean"
+      },
+      "lineage": "collected:hsw17:s7",
+      "macros": {
+        "\\CT": "\\operatorname{CT}",
+        "\\Ev": "\\operatorname{Ev}",
+        "\\R": "\\mathcal R"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hsw17",
+      "scope": "in_scope",
+      "statement": "With $g_\\lambda(q)=\\prod_i q^{a_i}/(1+q^{a_i})$,\n\\begin{equation}\n \\sum_{n\\geq0}\\sum_{\\lambda\\vdash n}\n       \\frac{g_\\lambda(q)}{z_\\lambda}L_\\lambda\n =\\sum_{n\\geq0}\\sum_{\\lambda\\vdash n}\n       \\frac{g_\\lambda(q)}{z_\\lambda}B_\\lambda.\n\\end{equation}\nHere $L_\\varnothing=B_\\varnothing=1$.\nThis is the $N=1$ case of Amdeberhan's Conjecture 18,\nequation (6.2), page 16 of~\\cite{HSW} (arXiv Conjecture 6.2).",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Weighted and rank-two extensions of Patel's proof: Hemmer–Straub–Westrem's Ev character-average conjecture",
+      "toolchain": null,
+      "version": 2,
+      "work": "hsw17"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s8",
+      "contributor": null,
+      "identity": "collected:hsw17:2:s8",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "439c57ca26fd0c0d2de1f48bc492717bc6f7597c",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/439c57ca26fd0c0d2de1f48bc492717bc6f7597c/D5/S3/Combinatorics/Partitions/HemmerStraubWestremWeightedAverage.lean"
+      },
+      "lineage": "collected:hsw17:s8",
+      "macros": {
+        "\\CT": "\\operatorname{CT}",
+        "\\Ev": "\\operatorname{Ev}",
+        "\\R": "\\mathcal R"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hsw17",
+      "scope": "in_scope",
+      "statement": "Let $w_k$ be elements of a commutative $\\mathbb Q$-algebra, with $t$ a\nformal variable. The two series\n$\\sum_{n\\geq0}t^n\\sum_{\\lambda\\vdash n}z_\\lambda^{-1}\n (\\prod_iw_{a_i})L_\\lambda$ and the corresponding series with $B_\\lambda$\nare equal, and their common value is\n\\[\n \\CT_u(1-u^{-1})\\exp\\!\\left(\n 2\\sum_{k\\geq1}\\frac{w_k t^k(u^k+1+u^{-k})}{k}\\right).\n\\]",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Weighted and rank-two extensions of Patel's proof: Hemmer–Straub–Westrem's Ev character-average conjecture",
+      "toolchain": null,
+      "version": 2,
+      "work": "hsw17"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s9",
+      "contributor": null,
+      "identity": "collected:hsw17:2:s9",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "439c57ca26fd0c0d2de1f48bc492717bc6f7597c",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/439c57ca26fd0c0d2de1f48bc492717bc6f7597c/D5/S3/Combinatorics/Partitions/HemmerStraubWestremWeightedAverage.lean"
+      },
+      "lineage": "collected:hsw17:s9",
+      "macros": {
+        "\\CT": "\\operatorname{CT}",
+        "\\Ev": "\\operatorname{Ev}",
+        "\\R": "\\mathcal R"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "hsw17",
+      "scope": "in_scope",
+      "statement": "For every $\\lambda\\vdash n$, $n\\geq1$,\n\\[\n \\sum_{\\tau\\in\\Ev(\\lambda)}(-1)^{\\ell(\\tau)}\n        \\sum_{\\mu\\in\\mathcal R_5(2n)}\\chi^\\mu_\\tau\n =\\sum_{\\tau\\in\\Ev(\\lambda)}\n        \\sum_{\\mu\\in\\mathcal R_4^c(2n)}\\chi^\\mu_\\tau.\n\\]\nThus Questions 4 and 5 have affirmative answers also for $N=2$, and\nConjecture 18 holds for $N=2$ as an equality of formal $q$-series.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Weighted and rank-two extensions of Patel's proof: Hemmer–Straub–Westrem's Ev character-average conjecture",
+      "toolchain": null,
+      "version": 2,
+      "work": "hsw17"
+    }
+  ]
+}

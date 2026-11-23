@@ -1,0 +1,18 @@
+Murnaghan-Nakayama character sums: all 67 partitions with 0 <= n <= 8.
+Distinct shape/cycle-type pairs compared: 2101.
+Identity-class values agree with the hook-length formula for every selected shape.
+Both weighted averages: 1, 0, 3, 0, 6, 0, 10, 0, 15.
+Cycle-index recurrence versus three geometric factors: every Laurent coefficient for 0 <= n <= 60.
+Adjacent-coefficient cancellation and parity formula: 0 <= n <= 60.
+N=1 q-series, coefficients of q^0 through q^10: 1, 0, 3, -4, 9, -12, 22, -36, 60, -88, 135.
+Same-parity detector: all 274 monomial-symmetric basis elements through degree 18, including odd degrees.
+Riordan paths versus same-parity tableau degrees: 0 <= m <= 30.
+Equal-part formulas: 1 <= repetitions <= 15; 1 <= part <= 5.
+Common-divisor corollary: all 41 applicable partitions of sizes 1 through 12.
+First-row vanishing: all 136 partition/shape pairs with 1 <= n <= 5 and first row > n.
+Arbitrary-weight cycle identity: w_k=(-1)^k(k+1), through degree 10.
+Source Appendix A, lambda=(5,2,1), N=3: left=-8, right=-16, difference=8.
+N=2 pointwise identity: all 30 partitions with 0 <= n <= 6, by Murnaghan-Nakayama.
+Mixed-part example lambda=(2,1): both character sums equal -4.
+All checks passed using integers and exact rational arithmetic.
+The all-degree statements follow from the written proofs in note.pdf.

@@ -1,0 +1,124 @@
+{
+  "id": "hsw17",
+  "revision": 2,
+  "problem_ids": [
+    "hsw17",
+    "hemmer-straub-westrem-2025-ev-character-identity"
+  ],
+  "topic": "Hemmer–Straub–Westrem's weighted Ev character-average conjecture",
+  "title": "Weighted and rank-two extensions of Patel's proof: Hemmer–Straub–Westrem's Ev character-average conjecture",
+  "creators": [
+    {
+      "name": "Ma, Haobo",
+      "affiliation": "ChronoAI Pte Ltd, Singapore"
+    },
+    {
+      "name": "Zhang, Wenlin",
+      "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"
+    }
+  ],
+  "abstract": "Extending Patel's pointwise proof (2026, Solution 1), we give an alternative coefficient proof of Conjecture 17, equation (6.1), page 15, of Hemmer, Straub and Westrem's New identities in the character table of symmetric groups involving Riordan numbers (2026), recovering the two-binary-quadratic Hilbert series of Benanti et al. (2012, Example 3.3, p.160). Both weighted character sums vanish in odd degree and equal binomial(n/2+2,2) in even degree. Patel's three-variable Schur specialization first identifies the sums for each partition, retaining all multiplicities in Ev. The cycle-index generating function then reduces their weighted average to a constant term equal to (1-t^2)^(-3). We give explicit arbitrary-weight and common-divisor consequences, including the N=1 case of Amdeberhan's q-series conjecture, and rederive the Riordan tableau formula already implicit in Meilhan–Suzuki (2015). A companion adjoint-representation argument proves the N=2 instances of the source's two character identities and its q-series conjecture.",
+  "summary": "An alternative coefficient proof and explicit Ev-character application of the invariant Hilbert series evaluated by Benanti et al. (2012), extending Patel’s full pointwise solution (2026). The written consequences include Riordan and equal-part formulas with prior attribution, mixed common divisors, first-row vanishing, arbitrary multiplicative weights and the N=1 q-series. The full Motzkin-level path question is answered by Amaral–Gil–Weiner (2026). The rank-two companion proves both character identities and the q-series conjecture for N=2, using the exceptional symplectic/orthogonal adjoint identification.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/439c57ca26fd0c0d2de1f48bc492717bc6f7597c/D5/S3/Combinatorics/Partitions/HemmerStraubWestremWeightedAverage.lean",
+  "related_evidence_urls": [
+    "https://github.com/the-omega-institute/trureturing/blob/439c57ca26fd0c0d2de1f48bc492717bc6f7597c/D5/S3/Combinatorics/Partitions/HemmerStraubWestrem.lean"
+  ],
+  "source": {
+    "doi": "10.37236/14401",
+    "url": "https://doi.org/10.37236/14401",
+    "locator": "Conjecture 17, equation (6.1), page 15; arXiv:2509.02796v1, Conjecture 6.1, equation (6.1), page 12"
+  },
+  "coverage": [
+    {
+      "item": "Conjecture 17, equation (6.1), page 15",
+      "status": "alternative proof; prior equivalent Hilbert series Benanti et al. (2012)",
+      "scope": "Both weighted equalities for all n>=1; the empty-partition convention gives generating function (1-t^2)^(-3), identified with the published two-binary-quadratic invariant series."
+    },
+    {
+      "item": "Conjecture 6, equation (2.4), page 4",
+      "status": "reproved; prior proof Patel (2026 public posting)",
+      "scope": "All positive-size partitions, with all Ev multiplicities retained."
+    },
+    {
+      "item": "Question 4, equation (2.1), pages 3–4",
+      "status": "answered: yes for N=1,2",
+      "scope": "The universal equality has a prior negative answer in the source at n=12,N=3, with values 1040 and 1041."
+    },
+    {
+      "item": "Question 5, equation (2.3), page 4",
+      "status": "answered: yes for N=1,2",
+      "scope": "The universal equality has a prior negative answer in Appendix A at lambda=(5,2,1),N=3, with difference 8."
+    },
+    {
+      "item": "Riordan tableau formula, Theorem 11",
+      "status": "reproved; prior proof Meilhan–Suzuki (2015)",
+      "scope": "Same-parity triples in every degree, from Lemma 3.7 and the Riordan invariant dimension. Also Okada (2016), Jagenteufel (2018), and Hemmer–Straub–Westrem (2025)."
+    },
+    {
+      "item": "Single-part-size cases, Sections 4–5",
+      "status": "reproved; prior rectangular k=1 formula Wallach (2014); both sides Hemmer–Straub–Westrem (2025)",
+      "scope": "2^r R_r for lambda=(1^r); 2^r T_r for lambda=(k^r), k>1. The adjacent-trinomial coefficient formula is Callan (comment dated 2004; manuscript 2006)."
+    },
+    {
+      "item": "Conjecture 18, equation (6.2), page 16",
+      "status": "proved for N=1,2",
+      "scope": "Formal q-series equality from the pointwise identities; the N=2 argument is a written adjoint-representation proof. No conclusion about N>=3."
+    },
+    {
+      "item": "Full Motzkin–Riordan bijection question, page 16",
+      "status": "answered: yes; prior proof Amaral–Gil–Weiner (2026)",
+      "scope": "arXiv:2609.27096v1, Theorem 4.1 gives the full Motzkin/tableau bijection restricting to Riordan paths and equal-parity tableaux."
+    },
+    {
+      "item": "Westrem (2024), Corollary 3.4",
+      "status": "reproved; prior proof Westrem (2024)",
+      "scope": "Signed Ev character sum for an individual shape is zero if its first row exceeds |lambda|."
+    },
+    {
+      "item": "Mixed common-divisor case and arbitrary multiplicative weights",
+      "status": "not posed; proved",
+      "scope": "A common divisor greater than one gives a nonnegative balanced-choice count. Arbitrary multiplicative weights have the displayed constant-term exponential series."
+    },
+    {
+      "item": "Other N>=3 classifications and knapsack degree refinements",
+      "status": "not covered",
+      "scope": "No all-N theorem or new character-degree refinement is asserted."
+    }
+  ],
+  "verification": {
+    "formal_statements": "The result declarations in the linked Lean files prove the weighted and pointwise identities in the Frobenius-coefficient model. The ordinary-character interpretation uses the classical Frobenius formula; an internal Specht-module construction is separate.",
+    "written_proofs": "The all-degree Schur detector, including odd-degree same-parity triples; pointwise identity; weighted generating function; Riordan and equal-part formulas; common-divisor count; first-row vanishing; arbitrary-weight and N=1 q-series consequences. The N=2 pointwise identity via the adjoint representations of SO(5) and Sp(4), with its weighted and q-series consequences.",
+    "finite_checks": "Exact Murnaghan–Nakayama character sums for all 67 partitions with 0<=n<=8; cycle-index Laurent coefficients through degree 60; q-series through degree 10; all 274 monomial-symmetric basis elements through degree 18; Riordan/tableau degrees through 30; equal parts with 1<=r<=15 and 1<=k<=5; common-divisor cases through size 12; first-row vanishing through n=5; a signed multiplicative-weight specialization through degree 10; the Appendix A counterexample at lambda=(5,2,1),N=3. Detailed counts are in verification.txt. The N=2 pointwise identity is checked by Murnaghan–Nakayama on all 30 partitions with 0<=n<=6."
+  },
+  "prior_sources": [
+    {
+      "authors": "Shivam Patel",
+      "year": 2026,
+      "url": "https://mathdb.com/p/370115/the-n-1-conjecture-for-character-sums-over-riordan-partition",
+      "locator": "Solution 1, Sections 1–3",
+      "scope": "The full pointwise identity and same-parity Schur detector."
+    },
+    {
+      "authors": "Francesca Benanti, Silvia Boumova, Vesselin Drensky, Georgi K. Genov, Plamen Koev",
+      "year": 2012,
+      "url": "https://arxiv.org/abs/1201.4448v1",
+      "locator": "Example 3.3; journal page 160",
+      "scope": "The invariant Hilbert series for two binary quadratics equals (1-t^2)^(-3)."
+    },
+    {
+      "authors": "Jean-Baptiste Meilhan, Sakie Suzuki",
+      "year": 2015,
+      "url": "https://arxiv.org/abs/1507.04454v1",
+      "locator": "Lemma 3.7, page 9",
+      "scope": "Same-parity decomposition of invariant tensor powers."
+    },
+    {
+      "authors": "Ryan J. Amaral, Juan B. Gil, Michael D. Weiner",
+      "year": 2026,
+      "url": "https://arxiv.org/abs/2609.27096v1",
+      "locator": "Theorem 4.1",
+      "scope": "Full Motzkin/tableau bijection restricting to Riordan paths and same-parity tableaux."
+    }
+  ]
+}
