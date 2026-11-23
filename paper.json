@@ -28,9 +28,9 @@
         "name": "Wenlin Zhang"
       }
     ],
-    "concept_doi": null,
+    "concept_doi": "10.5281/zenodo.24415598",
     "current_version": 2,
-    "doi": null,
+    "doi": "10.5281/zenodo.24415599",
     "lean_source": {
       "revision": "439c57ca26fd0c0d2de1f48bc492717bc6f7597c",
       "url": "https://github.com/the-omega-institute/trureturing/blob/439c57ca26fd0c0d2de1f48bc492717bc6f7597c/D5/S3/Combinatorics/Partitions/HemmerStraubWestremWeightedAverage.lean"
